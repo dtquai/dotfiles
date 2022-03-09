@@ -21,9 +21,16 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Maintaining PY
+
+alias update_py_packages='pip-review --local --interactive'
+alias update_pip='python3.10 -m pip install --user --upgrade pip'
+alias trigger_venv='python3.10 -m venv venv'
+alias activate_venv='source bin/activate'
+
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
-plugins=(git web-search kubectl history emoji encode64 json-tools copydir dirhistory copybuffer zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git sudo encode64 yarn web-search emoji zsh-syntax-highlighting macos dirhistory history jsontools kubectl copybuffer copyfile urltools)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
