@@ -3,7 +3,6 @@
 	git = !git
 	grpe = grep
 	psh = push
-	[alias]
 	a = add --all
 	ai = add -i
 	ap = apply
@@ -48,7 +47,7 @@
 	fu = fetch upstream
 	fp = format-patch
 	fk = fsck
-  g = grep -p
+  	g = grep -p
 	l = log --oneline
 	lg = log --oneline --graph --decorate
 	ls = ls-files
@@ -66,7 +65,7 @@
 	psf = push -f
 	psu = push -u
 	pst = push --tags
-  pso = push origin
+  	pso = push origin
 	psao = push --all origin
 	psfo = push -f origin
 	psuo = push -u origin
