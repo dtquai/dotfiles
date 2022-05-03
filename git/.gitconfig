@@ -47,7 +47,7 @@
 	fu = fetch upstream
 	fp = format-patch
 	fk = fsck
-  	g = grep -p
+	g = grep -p
 	l = log --oneline
 	lg = log --oneline --graph --decorate
 	ls = ls-files
@@ -65,7 +65,7 @@
 	psf = push -f
 	psu = push -u
 	pst = push --tags
-  	pso = push origin
+	pso = push origin
 	psao = push --all origin
 	psfo = push -f origin
 	psuo = push -u origin
@@ -165,11 +165,31 @@
 	subrepo = !sh -c 'git filter-branch --prune-empty --subdirectory-filter $1 master' -
 	human = name-rev --name-only --refs=refs/heads/*
 [color]
-	ui = true
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
 [user]
 	name = Doğukan Tuna
-	email = dogukan.tuna@trendyol.com
-	username = dogukan.tuna
+	email = dtuname@gmail.com
+	username = dpt4
+[commit]
+	gpgsign = true
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
