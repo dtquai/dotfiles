@@ -1,5 +1,5 @@
 #!/bin/bash
-EMAIL="dpt4ai"
+EMAIL="dtuname"
 EMAIL_S="gmail.com"
 
 git config --global user.name "DPT4"
