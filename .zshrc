@@ -1,10 +1,5 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
+. "$HOME/.fig/shell/zshrc.pre.zsh"
+export PATH=/opt/homebrew/bin:$PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -21,18 +16,15 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+plugins=(git sudo encode64 yarn web-search emoji zsh-syntax-highlighting macos dirhistory history jsontools kubectl copybuffer copyfile urltools)
+source /Users/$USER/ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Maintaining PY
 
-alias update_py_packages='pip-review --local --interactive'
-alias update_pip='python3.10 -m pip install --user --upgrade pip'
-alias trigger_venv='python3.10 -m venv venv'
-alias activate_venv='source bin/activate'
+alias update-packages='pip-review --local --interactive'
+alias update-pip='python3.10 -m pip install --user --upgrade pip'
+alias trigger-venv='python3.10 -m venv venv'
+alias activate-venv='source bin/activate'
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
-
-plugins=(git sudo encode64 yarn web-search emoji zsh-syntax-highlighting macos dirhistory history jsontools kubectl copybuffer copyfile urltools)
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /Users/$USER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/$USER/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"
