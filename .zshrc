@@ -19,6 +19,10 @@ unset __conda_setup
 plugins=(git sudo encode64 yarn web-search emoji zsh-syntax-highlighting macos dirhistory history jsontools kubectl copybuffer copyfile urltools)
 source /Users/$USER/ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# kubectl aliases from https://github.com/ahmetb/kubectl-alias
+#    > use sed to hijack --watch to watch $@.
+[ -f ~/.kubectl_aliases ] && source <(cat ~/.kubectl_aliases | sed -r 's/(kubectl.*) --watch/watch \1/g')
+
 # Maintaining PY
 
 alias update-packages='pip-review --local --interactive'
